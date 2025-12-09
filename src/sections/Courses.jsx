@@ -1,69 +1,129 @@
-import React from 'react';
-import { Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { Check, ChevronDown, ChevronUp, Star, Clock, Calendar, Award } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const courses = [
-    {
-        title: "Professional Makeup Artistry",
-        duration: "3 Months",
-        level: "Beginner to Pro",
-        description: "Complete course covering basics to bridal and editorial makeup. Build a strong foundation for your career.",
-        features: ["Tools & Hygiene Standards", "Skin Prep & Analysis", "Bridal & Party Makeup", "Portfolio Building"]
-    },
-    {
-        title: "Advanced Hair Styling",
-        duration: "1 Month",
-        level: "Intermediate",
-        description: "Master the art of hair styling from blow-drys to intricate updos for specialized events.",
-        features: ["Heat Styling Tools", "Bridal Buns & Braids", "Hair Extensions", "Texturizing Techniques"]
-    },
-    {
-        title: "Self Grooming Workshop",
-        duration: "1 Week",
-        level: "Personal",
-        description: "Learn to be your own makeup artist for daily wear and parties with techniques suited for your face.",
-        features: ["Day to Night Looks", "Product Knowledge", "Quick Hairstyles", "Personal Sanitation"]
-    }
-];
+const SyllabusSection = ({ title, items, defaultOpen = false }) => {
+    const [isOpen, setIsOpen] = useState(defaultOpen);
+
+    return (
+        <div className="border border-white/10 rounded-xl bg-deepCharcoal overflow-hidden mb-4">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex justify-between items-center p-6 text-left hover:bg-white/5 transition-colors"
+            >
+                <h3 className="text-xl font-heading text-white">{title}</h3>
+                {isOpen ? <ChevronUp className="text-metallicGold" /> : <ChevronDown className="text-gray-500" />}
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <div className="p-6 pt-0 border-t border-white/5 grid md:grid-cols-2 gap-4">
+                            {items.map((item, idx) => (
+                                <div key={idx} className="flex items-start gap-3">
+                                    <Check size={16} className="text-metallicGold mt-1 shrink-0" />
+                                    <span className="text-gray-300 text-sm font-light leading-relaxed">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
 
 const Courses = () => {
+    const makeupCurriculum = [
+        "Step by step detailed products knowledge & Brush uses",
+        "Skin Analysis, Undertone & Colour Wheel Theory",
+        "CTM Prep & Foundation Mixing Techniques",
+        "Contouring, Highlighting, Blush Application",
+        "Eyebrow Correction, Eyeliners, Lashes & Lenses",
+        "Colour Correction & Concealing Methods",
+        "Blending Tricks for Flawless Finish",
+        "Waterproof Base Making",
+        "Nude Editorial & Mature Skin Makeup",
+        "HD Bridal Look & Quick Reception Change",
+        "3D Signature Bridal Look & Airbrush Makeup",
+        "Smokey Party Look"
+    ];
+
+    const hairCurriculum = [
+        "Hairstyling Tools & Product Knowledge",
+        "Traditional Buns, Curls & Front Variations",
+        "Backcombing Tricks & Pulling Line Techniques",
+        "Hair Extensions & Flower Placement",
+        "International Variations: Classic Rose, Twist & Pull Bun",
+        "Messy Hair Buns & International Braids"
+    ];
+
+    const bonusCurriculum = [
+        "Saree Draping Workshops",
+        "Vanity Building Guidance",
+        "Photography Techniques & Ring Light Usage",
+        "Social Media Marketing & Business Guidance",
+        "FREE Model Shoot on Final Exam Day"
+    ];
+
     return (
-        <section id="courses" className="py-24 bg-deepCharcoal relative">
+        <section id="courses" className="py-24 bg-black relative">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-20 max-w-2xl mx-auto">
-                    <span className="text-metallicGold text-sm tracking-[0.3em] uppercase block mb-4 font-semibold">Our Programs</span>
-                    <h2 className="text-4xl md:text-5xl font-heading text-softWhite mb-6">Start Your Professional Journey</h2>
-                    <p className="text-gray-400 font-light">
-                        Our curriculum is designed to provide you with the technical skills and artistic vision needed to succeed in the beauty industry.
+
+                {/* Header */}
+                <div className="text-center mb-16 max-w-4xl mx-auto">
+                    <span className="text-metallicGold text-sm tracking-[0.3em] uppercase block mb-4 font-semibold">Flagship Program</span>
+                    <h2 className="text-4xl md:text-5xl font-heading text-softWhite mb-6 leading-tight">
+                        Professional Makeup & Hair Artistry
+                    </h2>
+                    <p className="text-gray-400 font-light text-lg">
+                        45 Days Basic to Highly Advanced International Level Certification Course
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {courses.map((course, idx) => (
-                        <div key={idx} className="group bg-richBlack border border-white/5 p-10 hover:border-metallicGold/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-metallicGold to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                {/* Course Details Card */}
+                <div className="bg-richBlack border border-white/10 rounded-2xl p-8 md:p-12 mb-16 shadow-2xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-metallicGold/5 rounded-full blur-3xl -z-10"></div>
 
-                            <div className="flex justify-between items-start mb-6">
-                                <span className="text-xs font-bold tracking-widest text-metallicGold uppercase border border-metallicGold/20 px-3 py-1 rounded-sm">{course.duration}</span>
-                            </div>
-
-                            <h3 className="text-2xl font-heading text-white mb-4 group-hover:text-metallicGold transition-colors">{course.title}</h3>
-                            <p className="text-gray-400 text-sm mb-8 leading-relaxed border-b border-white/5 pb-8">{course.description}</p>
-
-                            <ul className="space-y-4 mb-8 flex-grow">
-                                {course.features.map((feat, i) => (
-                                    <li key={i} className="flex items-start text-sm text-gray-300">
-                                        <Check size={16} className="text-metallicGold mr-3 mt-0.5 shrink-0" />
-                                        {feat}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button className="w-full py-4 bg-white/5 text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-metallicGold hover:text-black transition-all duration-300">
-                                View Curriculum
-                            </button>
+                    <div className="grid md:grid-cols-3 gap-8 mb-12 border-b border-white/10 pb-12">
+                        <div className="flex flex-col items-center text-center p-4">
+                            <Clock size={32} className="text-metallicGold mb-4" />
+                            <h4 className="text-white font-bold text-lg mb-1">Duration</h4>
+                            <p className="text-gray-400">45 Days (Intensive)</p>
                         </div>
-                    ))}
+                        <div className="flex flex-col items-center text-center p-4 border-y md:border-y-0 md:border-x border-white/10">
+                            <Award size={32} className="text-metallicGold mb-4" />
+                            <h4 className="text-white font-bold text-lg mb-1">Certification</h4>
+                            <p className="text-gray-400">Professional Certificate Included</p>
+                        </div>
+                        <div className="flex flex-col items-center text-center p-4">
+                            <Calendar size={32} className="text-metallicGold mb-4" />
+                            <h4 className="text-white font-bold text-lg mb-1">Level</h4>
+                            <p className="text-gray-400">Basic to International Advance</p>
+                        </div>
+                    </div>
+
+                    <div className="max-w-4xl mx-auto">
+                        <h3 className="text-center text-2xl font-heading text-white mb-8">Comprehensive Curriculum</h3>
+                        <SyllabusSection title="Module 1: Makeup Artistry Mastery" items={makeupCurriculum} defaultOpen={true} />
+                        <SyllabusSection title="Module 2: Advanced Hairstyling" items={hairCurriculum} />
+                        <SyllabusSection title="Module 3: Industry & Business Skills" items={bonusCurriculum} />
+                    </div>
+
+                    <div className="mt-12 text-center">
+                        <p className="text-white/60 italic mb-8">
+                            "From Basic techniques to advance global trends, our students are skilled to perfection."
+                        </p>
+                        <button className="px-10 py-4 bg-metallicGold text-black font-bold tracking-widest uppercase hover:bg-white transition-colors rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                            Enquire Now
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </section>
     );

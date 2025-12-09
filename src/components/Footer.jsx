@@ -13,7 +13,7 @@ const Footer = () => {
                         <p className="text-xs text-gray-500 mt-2 tracking-widest uppercase">The Art of Beauty</p>
                     </div>
                     <div className="flex space-x-6">
-                        <a href="#" className="w-12 h-12 rounded-full bg-deepCharcoal flex items-center justify-center text-gray-400 hover:text-metallicGold hover:bg-white/5 transition-all border border-white/5">
+                        <a href="https://www.instagram.com/ankitas_makeupacademy" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-deepCharcoal flex items-center justify-center text-gray-400 hover:text-metallicGold hover:bg-white/5 transition-all border border-white/5">
                             <Instagram size={20} />
                         </a>
                         <a href="#" className="w-12 h-12 rounded-full bg-deepCharcoal flex items-center justify-center text-gray-400 hover:text-metallicGold hover:bg-white/5 transition-all border border-white/5">
@@ -31,6 +31,7 @@ const Footer = () => {
                         <ul className="space-y-3 font-light">
                             <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
                             <li><a href="#courses" className="hover:text-white transition-colors">Courses</a></li>
+                            <li><a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
                             <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
                             <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
                         </ul>
@@ -56,8 +57,12 @@ const Footer = () => {
                         <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-xs text-metallicGold">Get in Touch</h5>
                         <ul className="space-y-3 font-light">
                             <li>info@ankimakeup.com</li>
-                            <li>+91 98765 43210</li>
-                            <li>New Delhi, India</li>
+                            <li>
+                                <a href="https://wa.me/919987461826" target="_blank" rel="noopener noreferrer" className="hover:text-metallicGold transition-colors">
+                                    +91 99874 61826
+                                </a>
+                            </li>
+                            <li>Airoli, Navi Mumbai <br /><span className="text-[10px] text-gray-500">Behind Dutta Meghe College</span></li>
                         </ul>
                     </div>
                 </div>

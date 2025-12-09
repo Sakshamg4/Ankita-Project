@@ -22,7 +22,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold mb-1">Visit Us</h4>
-                                    <p className="text-gray-400 text-sm">123 Fashion Street, Near City Landmark,<br />New Delhi, India 110001</p>
+                                    <p className="text-gray-400 text-sm">Ground floor, Plot 109, Sector 3A,<br />Airoli, Navi Mumbai 400708<br />Landmark: Behind Dutta Meghe Engineering College</p>
                                 </div>
                             </div>
 
@@ -32,7 +32,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold mb-1">Call Us</h4>
-                                    <p className="text-gray-400 text-sm">+91 98765 43210</p>
+                                    <a href="https://wa.me/919987461826" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-sm hover:text-metallicGold transition-colors">+91 99874 61826</a>
                                 </div>
                             </div>
 
@@ -78,8 +78,25 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="mt-24 h-[400px] w-full bg-neutral-900 border-t border-white/5 relative flex items-center justify-center">
-                <span className="text-white/20 font-heading text-3xl">Google Maps Embed</span>
+            <div className="mt-24 w-full">
+                <div className="container mx-auto px-6 mb-4">
+                    <p className="text-metallicGold font-medium flex items-center justify-center gap-2">
+                        <MapPin size={18} />
+                        <span>5 mins walk from Airoli Station</span>
+                    </p>
+                </div>
+                <div className="h-[400px] w-full bg-neutral-900 border-t border-white/5 relative flex items-center justify-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.0616594200987!2d72.98690097521853!3d19.148778082070866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9abeb27638b%3A0x763a038e5fe619b9!2sANKITA%20MAKEUP%20ACADEMY!5e0!3m2!1sen!2sin!4v1765279346894!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 invert-[0.8] hover:invert-0"
+                    ></iframe>
+                </div>
             </div>
         </section>
     );

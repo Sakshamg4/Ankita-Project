@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Courses from './sections/Courses';
+import Portfolio from './sections/Portfolio';
 import WhyChooseUs from './sections/WhyChooseUs';
 import Gallery from './sections/Gallery';
 import Contact from './sections/Contact';
@@ -17,6 +18,7 @@ function App() {
                 <About />
                 <WhyChooseUs />
                 <Courses />
+                <Portfolio />
                 <Gallery />
                 <Contact />
             </main>

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Star, Award, UserCheck, Clock } from 'lucide-react';
+import { Star, Award, UserCheck, Camera, Gem, Briefcase } from 'lucide-react';
 import abstractImage from '../assets/abstract_gold_texture.png';
 import editorialImage from '../assets/gallery_editorial.png';
 
 const reasons = [
-    { icon: <Star size={28} />, title: "Premium Products", desc: "Practice with top-tier international makeup brands like MAC, Huda Beauty, and more." },
-    { icon: <Award size={28} />, title: "Certification", desc: "Receive industry-recognized certificates upon course completion to boost your career." },
-    { icon: <UserCheck size={28} />, title: "Personal Mentorship", desc: "Small batch sizes ensure you get individual attention and guidance from experts." },
-    { icon: <Clock size={28} />, title: "Flexible Batches", desc: "Weekend and weekday batches available to suit students and working professionals." }
+    { icon: <UserCheck size={28} />, title: "Hands-on Practice", desc: "Intensive everyday practice on models to ensure you master every technique with confidence." },
+    { icon: <Award size={28} />, title: "Certified Course", desc: "Receive a professional certificate upon completion, validating your skills for the industry." },
+    { icon: <Star size={28} />, title: "Expert Mentorship", desc: "Learn unique techniques formulated by internationally trained Artist Ankita Sharma." },
+    { icon: <Gem size={28} />, title: "Personalized Attention", desc: "Small batches ensure individual guidance, helping you refine your artistry." },
+    { icon: <Camera size={28} />, title: "Portfolio Shoot", desc: "Professional bridal portfolio shoot with models on the final examination day." },
+    { icon: <Briefcase size={28} />, title: "Business Guidance", desc: "Learn vanity building, social media marketing, and photography techniques." }
 ];
 
 const WhyChooseUs = () => {
