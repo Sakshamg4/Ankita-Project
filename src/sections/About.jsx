@@ -1,4 +1,5 @@
 import React from 'react';
+import artistImage from '../assets/artist_portrait.png';
 
 const About = () => {
     return (
@@ -10,9 +11,11 @@ const About = () => {
                 <div className="relative group">
                     {/* Image Frame */}
                     <div className="w-full aspect-[4/5] bg-deepCharcoal rounded-sm relative overflow-hidden border border-white/5">
-                        <div className="absolute inset-0 bg-neutral-800 flex items-center justify-center">
-                            <span className="text-white/20 text-lg tracking-widest uppercase">Artist Image</span>
-                        </div>
+                        <img
+                            src={artistImage}
+                            alt="Ankita - Lead Artist"
+                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        />
                     </div>
 
                     {/* Floating Card */}

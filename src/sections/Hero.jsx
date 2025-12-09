@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import heroImage from '../assets/hero_model.png';
 
 const Hero = () => {
     return (
@@ -63,10 +64,11 @@ const Hero = () => {
                     <div className="relative w-[400px] h-[500px] border border-metallicGold/30 p-4 rounded-t-full">
                         <div className="absolute top-0 right-0 w-full h-full border border-metallicGold/20 rounded-t-full translate-x-4 -translate-y-4"></div>
                         <div className="w-full h-full bg-deepCharcoal/50 backdrop-blur-sm rounded-t-full overflow-hidden relative">
-                            {/* Placeholder for Hero Image */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-metallicGold/10 text-9xl font-heading opacity-50 select-none">AMA</span>
-                            </div>
+                            <img
+                                src={heroImage}
+                                alt="High Fashion Makeup Model"
+                                className="w-full h-full object-cover opacity-90"
+                            />
                             <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
                         </div>
                     </div>

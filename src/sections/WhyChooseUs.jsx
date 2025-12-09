@@ -1,5 +1,7 @@
 import React from 'react';
 import { Star, Award, UserCheck, Clock } from 'lucide-react';
+import abstractImage from '../assets/abstract_gold_texture.png';
+import editorialImage from '../assets/gallery_editorial.png';
 
 const reasons = [
     { icon: <Star size={28} />, title: "Premium Products", desc: "Practice with top-tier international makeup brands like MAC, Huda Beauty, and more." },
@@ -40,14 +42,25 @@ const WhyChooseUs = () => {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-4 lg:translate-y-12">
                                 <div className="h-64 bg-deepCharcoal rounded-t-[5rem] rounded-b-xl border border-white/5 relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-neutral-800 transition-transform duration-700 group-hover:scale-110"></div>
+                                    <div className="absolute inset-0 bg-neutral-800 transition-transform duration-700 group-hover:scale-110">
+                                        <img src={editorialImage} alt="Creative Makeup" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                                    </div>
                                 </div>
-                                <div className="h-40 bg-metallicGold/5 rounded-xl border border-metallicGold/20 backdrop-blur-sm relative overflow-hidden"></div>
+                                <div className="h-40 bg-metallicGold/5 rounded-xl border border-metallicGold/20 backdrop-blur-sm relative overflow-hidden">
+                                    <img src={abstractImage} alt="Luxury Texture" className="w-full h-full object-cover opacity-60" />
+                                </div>
                             </div>
                             <div className="space-y-4">
-                                <div className="h-40 bg-deepCharcoal rounded-xl border border-white/5 relative overflow-hidden"></div>
+                                <div className="h-40 bg-deepCharcoal rounded-xl border border-white/5 relative overflow-hidden">
+                                    <div className="w-full h-full bg-gradient-to-br from-metallicGold/20 to-transparent flex items-center justify-center">
+                                        <span className="text-metallicGold font-heading text-4xl">AMA</span>
+                                    </div>
+                                </div>
                                 <div className="h-64 bg-deepCharcoal rounded-b-[5rem] rounded-t-xl border border-white/5 relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-neutral-800 transition-transform duration-700 group-hover:scale-110"></div>
+                                    <div className="absolute inset-0 bg-neutral-800 transition-transform duration-700 group-hover:scale-110">
+                                        {/* Reusing abstract image mostly for texture here, or could duplicate others if needed */}
+                                        <img src={abstractImage} alt="Close up Detail" className="w-full h-full object-cover scale-150 rotate-90 opacity-80" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
